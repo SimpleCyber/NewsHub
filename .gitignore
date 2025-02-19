@@ -53,5 +53,4 @@ logs/
 Thumbs.db
 
 ### Dependency Files
-package-lock.json
 yarn.lock
