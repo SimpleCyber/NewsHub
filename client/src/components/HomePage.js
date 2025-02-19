@@ -1,16 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Newspaper, Briefcase, Laptop, Film, Heart, FlaskRound as Flask, Trophy, ArrowRight, Globe } from 'lucide-react';
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const categories = [
-    { id: 'general', name: 'General', Icon: Newspaper, color: 'bg-gradient-to-br from-blue-500 to-blue-600' },
-    { id: 'business', name: 'Business', Icon: Briefcase, color: 'bg-gradient-to-br from-emerald-500 to-emerald-600' },
-    { id: 'technology', name: 'Technology', Icon: Laptop, color: 'bg-gradient-to-br from-purple-500 to-purple-600' },
-    { id: 'entertainment', name: 'Entertainment', Icon: Film, color: 'bg-gradient-to-br from-pink-500 to-pink-600' },
-    { id: 'health', name: 'Health', Icon: Heart, color: 'bg-gradient-to-br from-red-500 to-red-600' },
-    { id: 'science', name: 'Science', Icon: Flask, color: 'bg-gradient-to-br from-amber-500 to-amber-600' },
-    { id: 'sports', name: 'Sports', Icon: Trophy, color: 'bg-gradient-to-br from-orange-500 to-orange-600' }
+    { id: 'general', name: 'General', Icon: Newspaper, color: 'bg-gradient-to-br from-blue-500 to-blue-600',path: '/news/general' },
+    { id: 'business', name: 'Business', Icon: Briefcase, color: 'bg-gradient-to-br from-emerald-500 to-emerald-600',path: '/news/business' },
+    { id: 'technology', name: 'Technology', Icon: Laptop, color: 'bg-gradient-to-br from-purple-500 to-purple-600',path: '/news/technology' },
+    { id: 'entertainment', name: 'Entertainment', Icon: Film, color: 'bg-gradient-to-br from-pink-500 to-pink-600',path: '/news/entertainment' },
+    { id: 'health', name: 'Health', Icon: Heart, color: 'bg-gradient-to-br from-red-500 to-red-600',path: '/news/health' },
+    { id: 'science', name: 'Science', Icon: Flask, color: 'bg-gradient-to-br from-amber-500 to-amber-600',path: '/news/science' },
+    { id: 'sports', name: 'Sports', Icon: Trophy, color: 'bg-gradient-to-br from-orange-500 to-orange-600',path: '/news/sports' }
   ];
 
   return (
@@ -34,6 +35,7 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20 ">
             {categories.map(({ id, name, Icon, color }) => (
               <button
+                onClick={() => navigate(categories.path)} 
                 key={id}
                 className={`${color} group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 h-56`}
               >
