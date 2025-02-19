@@ -27,7 +27,7 @@ const NewsPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6 mt-20 text-center text-gray-800 dark:text-white">
-        
+      Top {category.charAt(0).toUpperCase() + category.slice(1)} News
       </h1>
       
       {loading ? (
