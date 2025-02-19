@@ -7,7 +7,6 @@ You can check out the live version of NewsHub here:
 
 [NewsHub Live](https://newshubs.vercel.app/)
 
-<iframe src="https://newshubs.vercel.app/" width="100%" height="300px"></iframe>
 
 ## 🛠️ Tech Stack
 
